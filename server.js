@@ -59,7 +59,7 @@ const _getField = function (doc, field) {
 }
 
 Meteor.user = function (input) {
-  if (typeof input === 'undefined') {
+  if (typeof input === 'undefined' || Tracker?.active) {
     return _original()
   }
 
